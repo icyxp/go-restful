@@ -2,6 +2,7 @@ package middleware
 
 import (
 	"fmt"
+	"go-restful/lib/utils"
 	"os"
 	"time"
 
@@ -47,6 +48,7 @@ func Logger() gin.HandlerFunc {
 		clientUserAgent := c.Request.UserAgent()
 		referer := c.Request.Referer()
 		traceID := c.Request.Header.Get("x-amzn-trace-id")
+		requestID, _ := c.Get(utils.XRequestID)
 		dataLength := c.Writer.Size()
 		if dataLength < 0 {
 			dataLength = 0
@@ -61,13 +63,14 @@ func Logger() gin.HandlerFunc {
 			"path":       path,
 			"dataLength": dataLength,
 			"traceID":    traceID,
+			"requestID":  requestID,
 			"header":     header,
 		})
 
 		if len(c.Errors) > 0 {
 			entry.Error(c.Errors.ByType(gin.ErrorTypePrivate).String())
 		} else {
-			msg := fmt.Sprintf("%s - %s [%s] \"%s %s\" %d %d \"%s\" \"%s\" \"%s\" (%dms)", clientIP, hostname, time.Now().Format(timeFormat), c.Request.Method, path, statusCode, dataLength, referer, clientUserAgent, traceID, latency)
+			msg := fmt.Sprintf("%s - %s [%s] \"%s %s\" %d %d \"%s\" \"%s\" \"%s\" \"%s\" (%dms)", clientIP, hostname, time.Now().Format(timeFormat), c.Request.Method, path, statusCode, dataLength, referer, clientUserAgent, traceID, requestID, latency)
 			if statusCode > 499 {
 				entry.Error(msg)
 			} else if statusCode > 399 {

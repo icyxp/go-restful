@@ -16,7 +16,7 @@ var (
 func main() {
 	pflag.Parse()
 
-	// init config
+	// init config, parse yaml
 	if err := conf.Init(*cfg); err != nil {
 		panic(err)
 	}

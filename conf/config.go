@@ -63,7 +63,7 @@ func InitLog() {
 		LogRotateSize:    viper.GetInt("logout.log_rotate_size"),
 		LogBackupCount:   viper.GetInt("logout.log_backup_count"),
 	}
-	fmt.Println(config)
+
 	err := log.NewLogger(&config, log.InstanceZapLogger)
 	if err != nil {
 		fmt.Printf("InitWithConfig err: %v", err)

@@ -7,6 +7,7 @@ database:
   pwd: fromidea
   addr: 192.168.3.60:3306
   name: xp-demo2
+  debug: true
 logout:
   writers: stdout # file,stdout, can use both
   logger_level: DEBUG # DEBUG, INFO, WARN, ERROR, FATAL

@@ -1,0 +1,20 @@
+app:
+  run_mode: debug # gin debug, release, test
+  addr: :8080 # HTTP
+  pprof_token: 12321321$!@@
+database:
+  user: icyboy
+  pwd: fromidea
+  addr: 192.168.3.60:3306
+  name: xp-demo2
+logout:
+  writers: stdout # file,stdout, can use both
+  logger_level: DEBUG # DEBUG, INFO, WARN, ERROR, FATAL
+  #logger_file: /data/log/nocalhost.log   # log file
+  #logger_warn_file: /data/log/nocalhost.wf.log
+  #logger_error_file: /data/log/nocalhost.err.log
+  #log_format_text: false          # false
+  #log_rolling_policy: daily,      # rotate: daily, hourly
+  #log_rotate_date: 1              # rollingPolicy: daily use
+  #log_rotate_size: 1              # rollingPolicy: size use
+  #log_backup_count: 7             # When the log file reaches the rollover standard, the log system will call the log file for compressed backup, where the maximum number of backup files is specified.

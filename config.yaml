@@ -1,19 +1,19 @@
 app:
   run_mode: debug # gin debug, release, test
   addr: :8080 # HTTP
-  pprof_token: 12321321$!@@
+  pprof_token: 12321321$!@@ #swagger以及pprof访问token，在浏览器中加入cookie或者是header中加入key：pprof_token，Value为当前配置的内容
 database:
   user: icyboy
   pwd: fromidea
   addr: 192.168.3.60:3306
   name: xp-demo2
-  debug: true
+  debug: true #打印sql详细日志
 logout:
   writers: stdout # file,stdout, can use both
   logger_level: DEBUG # DEBUG, INFO, WARN, ERROR, FATAL
-  #logger_file: /data/log/nocalhost.log   # log file
-  #logger_warn_file: /data/log/nocalhost.wf.log
-  #logger_error_file: /data/log/nocalhost.err.log
+  #logger_file: /data/log/go-restful.log   # log file
+  #logger_warn_file: /data/log/go-restful.wf.log
+  #logger_error_file: /data/log/go-restful.err.log
   #log_format_text: false          # false
   #log_rolling_policy: daily,      # rotate: daily, hourly
   #log_rotate_date: 1              # rollingPolicy: daily use

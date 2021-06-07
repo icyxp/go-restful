@@ -16,6 +16,7 @@ require (
 	github.com/lestrrat-go/strftime v1.0.4 // indirect
 	github.com/lithammer/shortuuid/v3 v3.0.7
 	github.com/patrickmn/go-cache v2.1.0+incompatible
+	github.com/penglongli/gin-metrics v0.1.2
 	github.com/pkg/errors v0.9.1
 	github.com/sirupsen/logrus v1.4.2
 	github.com/spf13/cast v1.3.0
@@ -26,6 +27,8 @@ require (
 	github.com/swaggo/swag v1.5.1
 	github.com/tidwall/gjson v1.8.0
 	github.com/toolkits/net v0.0.0-20160910085801-3f39ab6fe3ce
+	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp v0.20.0
+	go.opentelemetry.io/otel/trace v0.20.0
 	go.uber.org/multierr v1.5.0 // indirect
 	go.uber.org/zap v1.13.0
 	golang.org/x/crypto v0.0.0-20210322153248-0c34fe9e7dc2 // indirect

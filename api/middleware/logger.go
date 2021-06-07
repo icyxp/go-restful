@@ -55,7 +55,7 @@ func Logger() gin.HandlerFunc {
 		}
 
 		entry := logger.WithFields(logrus.Fields{
-			"hostname":   hostname,
+			"hostname":   fmt.Sprintf("%s", hostname),
 			"statusCode": statusCode,
 			"latency":    fmt.Sprintf("%s", latency),
 			"clientIP":   clientIP,
